@@ -1,0 +1,58 @@
+training:
+  logging_dir: "./logs"
+  log_interval: 4
+  epochs: 1000
+  batch_size: 32
+  no_cuda: False
+  multigpu: False
+  seed: 42
+  resume_name: False
+comet:
+  api_key: "<REPLACE WITH COMET API KEY>"
+  previous_experiment: False
+dataset:
+  data_path: "mobility/mobility_dict_norm.pkl"
+  data_folder: "data"
+  counties:
+    [
+      "06037",
+      "17031",
+      "48201",
+      "04013",
+      "06073",
+      "06059",
+      "12086",
+      "48113",
+      "06065",
+      "06071",
+      "32003",
+      "53033",
+      "48439",
+      "26163",
+      "06085",
+      "12011",
+      "48029",
+      "42101",
+      "06001",
+      "25017",
+      "36103",
+      "06067",
+      "36059",
+      "12099",
+      "39035",
+      "12057",
+      "42003",
+      "26125",
+      "39049",
+      "27053",
+    ]
+  max_length: 7
+  mini_dataset: False
+  n_weeks: 7
+scpc_model:
+  k_size: 1
+  emb_dim: 7
+  ar_type: "gru"
+  ar_dim: 60
+  enc_type: "cnn"
+  enc_dim: 60

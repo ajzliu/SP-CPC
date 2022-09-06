@@ -1,11 +1,11 @@
-![Model Architecture](figs/1dayfut_FINAL.png)
+![Model Architecture](figs/SP-CPC_model.png)
 
 <h2 align="center">
-Spatial Probabilistic Constrastive Predictive Coding
+Spatial Probabilistic Contrastive Predictive Coding
 </h2>
 
-This respository contains the code to reproduce the results of our paper _[Spatiotemporal Disease Case Prediction Using Contrastive
-Predictive Coding]()_, submitted to the the 2022 Spatial'Epi workshop at ACM SIGSPATIAL.
+This repository contains the code to reproduce the results of our paper _[Spatiotemporal Disease Case Prediction Using Contrastive
+Predictive Coding]()_, submitted to the 2022 Spatial'Epi workshop at ACM SIGSPATIAL.
 
 <!-- TABLE OF CONTENTS -->
 
@@ -47,9 +47,9 @@ Old versions of the datasets used for training the model in the paper can be fou
 
 First, download the required dependencies for the project. A minimum of Python 3.7 is required to run this project (due to ordered dictionaries).
 
-First, install the necessary requirements for this project. If you are using your base environment, use `pip install -r requirements.txt` or if you are using a Conda environment, use `conda install --file requirements.txt`. Not all requirements may be in the list, however, so follow the appropriate prompts from your terminal.
+First, install the requirements for this project. If you are using your base environment, use `pip install -r requirements.txt` or if you are using a Conda environment, use `conda install --file requirements.txt`. Not all requirements may be on the list, however, so follow the appropriate prompts from your terminal.
 
-To obtain the mobility dictionary for any number of counties, first run `gen_all_mobility_mat.py`. Then, to obtain a smaller, renormalized sample of the mobility dictionary, update the fips_codes list to include the FIPS codes for what you want to run your code on, and then run `renormalize_mob_custom.py`. Make sure the list of counties you pass into this custom list is the same as in dataset.counties in `config.yaml`.
+To obtain the mobility dictionary for any number of counties, first, run `gen_all_mobility_mat.py`. Then, to obtain a smaller, renormalized sample of the mobility dictionary, update the fips_codes list to include the FIPS codes for what you want to run your code on, and then run `renormalize_mob_custom.py`. Make sure the list of counties you pass into this custom list is the same as in dataset.counties in `config.yaml`.
 
 If you are choosing to use comet, make sure to replace the API key in `config.yaml` and the project_name in `main_multicounty.py`. **Using comet is not necessary, and can be disabled by setting `has_comet` to `false` in main_multicounty.py and relevant files.** Then, run the command below to begin the training.
 
@@ -57,7 +57,7 @@ If you are choosing to use comet, make sure to replace the API key in `config.ya
 python3 main_multicounty.py
 ```
 
-Then, run the appropriate file according the [repository structure](#repository-structure).
+Then, run the appropriate file according to the [repository structure](#repository-structure).
 
 <!-- Repository Structure -->
 
@@ -69,13 +69,13 @@ The log files contain the model structures and hyperparameters used for training
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `arima_7day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 7 days of new case data using 21 days of past data.                                                                              |
 | `arima_1day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 1 day of new case data using 13 days of past data.                                                                               |
-| `logs/nospatial-30counties-dim120.log`             | Log file for training a CPC model with no spatial data on 30 counties with a encoder/autoregressive dimension of 120.                                                                        |
-| `logs/spatial-30counties-dim120.log`               | Log file for training the SCPC model with spatial data on 30 counties with a encoder/autoregressive dimension of 120.                                                                        |
-| `logs/spatial-30counties-dim120-leakyrelu.log`     | Log file for training the SCPC model with spatial data on 30 counties with a encoder/autoregressive dimension of 120 and a LeakyReLU in place of a ReLU in the previous two experiments.     |
-| `logs/spatial-30counties-dim60.log`                | Log file for training the SCPC model with spatial data on 30 counties with a encoder/autoregressive dimension of 60.                                                                         |
-| `logs/spatial-30counties-dim60-rnn.log`            | Log file for training the SCPC model with spatial data on 30 counties with a encoder/autoregressive dimension of 60 and an RNN in place of a GRU.                                            |
-| `logs/spatial-30counties-dim60-linear.log`         | Log file for training the SCPC model with spatial data on 30 counties with a encoder/autoregressive dimension of 60 and a single `Linear` layer in place of a `Conv1D` layer in the encoder. |
-| `logs/spatial-30counties-dim60-nonoverlapping.log` | Log file for training the SCPC model with spatial data on 30 counties with a encoder/autoregressive dimension of 60 and nonoverlapping data.                                                 |
+| `logs/nospatial-30counties-dim120.log`             | Log file for training a CPC model with no spatial data on 30 counties with an encoder/autoregressive dimension of 120.                                                                        |
+| `logs/spatial-30counties-dim120.log`               | Log file for training the SCPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 120.                                                                        |
+| `logs/spatial-30counties-dim120-leakyrelu.log`     | Log file for training the SCPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 120 and a LeakyReLU in place of a ReLU in the previous two experiments.     |
+| `logs/spatial-30counties-dim60.log`                | Log file for training the SCPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 60.                                                                         |
+| `logs/spatial-30counties-dim60-rnn.log`            | Log file for training the SCPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 60 and an RNN in place of a GRU.                                            |
+| `logs/spatial-30counties-dim60-linear.log`         | Log file for training the SCPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 60 and a single `Linear` layer in place of a `Conv1D` layer in the encoder. |
+| `logs/spatial-30counties-dim60-nonoverlapping.log` | Log file for training the SCPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 60 and nonoverlapping data.                                                 |
 | `final_models/...`                                 | Final trained models produced by the experiments with the corresponding log name.                                                                                                            |
 | `config.yaml`                                      | Config file for adjusting hyperparameters.                                                                                                                                                   |
 | `main_multicounty.py`                              | Python script to train SCPC. Change the imported dataset at the top of the file to change which dataset the model uses.                                                                      |
@@ -84,7 +84,7 @@ The log files contain the model structures and hyperparameters used for training
 | `test_predict.py`                                  | Python script to generate predictions using Metropolis-Hastings.                                                                                                                             |
 | `utils/dataset_nonoverlap.py`                      | Contains dataset classes for the nonoverlapping dataset in training SCPC.                                                                                                                    |
 | `utils/dataset_overlap_cpc.py`                     | Contains dataset classes for the overlapping dataset and mobility data in training SCPC.                                                                                                     |
-| `utils/dataset_overlap_mh.py`                      | Contains dataset classes for the overlapping dataset and mobility datarequired for evaluating Metropolis-Hastings.                                                                           |
+| `utils/dataset_overlap_mh.py`                      | Contains dataset classes for the overlapping dataset and mobility data required for evaluating Metropolis-Hastings.                                                                           |
 | `utils/logger.py`                                  | Contains helper functions for logging during training and validation.                                                                                                                        |
 | `utils/seed.py`                                    | Contains helper functions for setting the random seeds for all libraries.                                                                                                                    |
 | `utils/train.py`                                   | Contains helper functions for training the model.                                                                                                                                            |
@@ -105,16 +105,17 @@ If you find any issues with this repository, please use the Issues tab or contac
 
 ## Acknowledgements
 
-We would like to express our deepest gratitude to our research advisors Professor Andreas Züfle at Emory University and Dr. Hoang Duy Thai at George Mason University for their constant support, ideas, and feedback. Many thanks also to the [Aspiring Scientists Summer Internship Program](https://science.gmu.edu/assip) at George Mason University that provided us with the opportunity to conduct this research project this summer.
+We would like to express our deepest gratitude to our research advisors Professor Andreas Züfle at Emory University and Dr. Hoang Duy Thai at George Mason University for their constant support, ideas, and feedback. Many thanks also to the [Aspiring Scientists Summer Internship Program](https://science.gmu.edu/assip) at George Mason University which provided us with the opportunity to conduct this research project this summer.
 
 <!-- Funding -->
 
 ## Funding
 
-This material is based upon work supported by the National Science Foundation under Grant No. DEB-2030685 for "RAPID: An Ensemble Approach to Combine Predictions from COVID-19 Simulations." Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+This material is based upon work supported by the National Science Foundation under Grant No. DEB-2109647 for "Data-Driven Modeling to Improve Understanding of Human Behavior, Mobility, and
+Disease Spread." Any opinions, findings, conclusions, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation. This research was additionally supported by the Aspiring Scientists Summer Internship Program (ASSIP) at George Mason University.
 
 <!-- References -->
 
 ## References
 
-Parts of this repository are based off of [vgaraujov/CPC-NLP-PyTorch](https://github.com/vgaraujov/CPC-NLP-PyTorch).
+Parts of this repository are based on [vgaraujov/CPC-NLP-PyTorch](https://github.com/vgaraujov/CPC-NLP-PyTorch).
