@@ -80,7 +80,7 @@ for i in range(len(all_y)):
     removed_X.append(all_X[i])
     removed_y.append(all_y[i])
 
-X_train, X_test, y_train, y_test = train_test_split(removed_X, removed_y, test_size=0.33, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(removed_X, removed_y, test_size=0.2, random_state=42)
 
 reg = LinearRegression().fit(X_train, y_train)
 
