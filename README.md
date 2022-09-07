@@ -1,8 +1,8 @@
-![Model Architecture](figs/SP-CPC_model.png)
+![Model Architecture](figs/SP-CPC_ModelFinalArchitecture.png)
 
-<h2 align="center">
+<h1 align="center">
 Spatial Probabilistic Contrastive Predictive Coding
-</h2>
+</h1>
 
 This repository contains the code to reproduce the results of our paper _[Spatiotemporal Disease Case Prediction Using Contrastive
 Predictive Coding]()_, submitted to the 2022 Spatial'Epi workshop at ACM SIGSPATIAL.
@@ -68,7 +68,9 @@ The log files contain the model structures and hyperparameters used for training
 | Path                                               | Description                                                                                                                                                                                  |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `arima_7day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 7 days of new case data using 21 days of past data.                                                                              |
-| `arima_1day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 1 day of new case data using 13 days of past data.                                                                               |
+| `arima_1day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 1 day of new case data using 13 days of past data.                                                                    
+| `constant_interpolation_7day.py   `                | Calculates the mean average percentage error between the case value for the next seven days based on the case values seven days prior.                                                                             
+| `constant_interpolation_1day.py`                   | Calculates the mean average percentage error between the case value for the next day based on the case values seven days prior.                                                                   |
 | `logs/nospatial-30counties-dim120.log`             | Log file for training a CPC model with no spatial data on 30 counties with an encoder/autoregressive dimension of 120.                                                                        |
 | `logs/spatial-30counties-dim120.log`               | Log file for training the SCPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 120.                                                                        |
 | `logs/spatial-30counties-dim120-leakyrelu.log`     | Log file for training the SCPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 120 and a LeakyReLU in place of a ReLU in the previous two experiments.     |
