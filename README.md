@@ -1,7 +1,10 @@
-<h1 align="center">
-<img src="figs/SP-CPC_ModelFinalArchitecture.png" alt="Model Architecture">
-Spatial Probabilistic Contrastive Predictive Coding
-</h1>
+<p align="center">
+    <img src="figs/SP-CPC_ModelFinalArchitecture.png" alt="Model Architecture">
+    <h1 align="center">
+        Spatial Probabilistic Contrastive Predictive Coding
+    </h1>
+</p>
+
 
 This repository contains the code to reproduce the results of our paper _[Spatiotemporal Disease Case Prediction Using Contrastive
 Predictive Coding]()_, submitted to the 2022 Spatial'Epi workshop at ACM SIGSPATIAL.
