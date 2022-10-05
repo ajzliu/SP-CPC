@@ -2,7 +2,7 @@ import csv
 import pickle
 import numpy as np
 
-with open('data/mainland_fips_master.csv', encoding='ISO-8859-1') as csv_file:
+with open('../data/mainland_fips_master.csv', encoding='ISO-8859-1') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     list_codes, count = [], 0
     for row in csv_reader:
@@ -21,7 +21,7 @@ for val in list_codes:
     curr_ct += 1
 
 csv_data = []
-with open('data/daily_county2county_2021_04_15_int.csv', encoding='UTF-8') as csv_file:
+with open('../data/daily_county2county_2021_04_15_int.csv', encoding='UTF-8') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     count = 0
     for row in csv_reader:
@@ -46,9 +46,7 @@ for curr_code in list_codes:
     for val in list_codes:
         dict_codes[val] = 0
 
-# Other files in the repository will have the path to this set to 
-# mobility/mobility_dict.pkl
-path = './mobility/mobility_dict.pkl'
+path = '../mobility/mobility_dict.pkl'
 
 with open(path, 'wb') as f:
     pickle.dump(all_codes, f)

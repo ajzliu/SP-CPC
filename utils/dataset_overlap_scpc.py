@@ -1,5 +1,5 @@
-""" Dataset loader for the multicounty 6-week nonoverlapping new cases dataset """
-from calendar import weekday
+""" Dataset loader for the overlapping dataset and mobility data in training Spatial CPC """
+
 import torch.utils.data as data
 import pandas as pd
 import numpy as np

@@ -7,7 +7,7 @@
 
 
 This repository contains the code to reproduce the results of our paper _[Spatiotemporal Disease Case Prediction Using Contrastive
-Predictive Coding]()_, submitted to the 2022 Spatial'Epi workshop at ACM SIGSPATIAL.
+Predictive Coding]()_, accepted to the 2022 Spatial Epidemiology workshop at the 30<sup>th</sup> ACM SIGSPATIAL conference in Seattle, WA from November 1-4, 2022.
 
 <!-- TABLE OF CONTENTS -->
 
@@ -33,7 +33,7 @@ If you found our paper or code useful, please cite:
 
 ## About The Project
 
-Time series prediction models have played a vital role in guiding effective policymaking and response during the COVID-19 pandemic by predicting future cases and deaths at the country, state, and county levels. However, for emerging diseases, there is not sufficient historic data to fit traditional supervised prediction models. In addition, such models do not consider human mobility between regions. To mitigate the need for supervised models and to include human mobility data in the prediction, we propose Spatial Probabilistic Contrastive Predictive Coding (SP-CPC) which leverages Contrastive Predictive Coding (CPC), an unsupervised time-series representation learning approach. We augment CPC to incorporate a covariate mobility matrix into the loss function, representing the relative number of individuals traveling between each county on a given day. The proposal distribution learned by the algorithm is then sampled by the Metropolis-Hastings algorithm to give a final prediction of the number of COVID-19 cases. We find that the model applied to COVID-19 data is able to make accurate short-term predictions, more accurate than ARIMA and simple time-series extrapolation methods, one day into the future. However, for longer-term predictions windows of seven or more days into the future, we find that our predictions are not as competitive and require future research.
+Time series prediction models have played a vital role in guiding effective policymaking and response during the COVID-19 pandemic by predicting future cases and deaths at the country, state, and county levels. However, for emerging diseases, there is not sufficient historic data to fit traditional supervised prediction models. In addition, such models do not consider human mobility between regions. To mitigate the need for supervised models and to include human mobility data in the prediction, we propose Spatial Probabilistic Contrastive Predictive Coding (SP-CPC) which leverages Contrastive Predictive Coding (CPC), an unsupervised time-series representation learning approach. We augment CPC to incorporate a covariate mobility matrix into the loss function, representing the relative number of individuals traveling between each county on a given day. The proposal distribution learned by the algorithm is then sampled by the Metropolis-Hastings algorithm to give a final prediction of the number of COVID-19 cases. We find that the model applied to COVID-19 data can make accurate short-term predictions, more accurate than ARIMA and simple time-series extrapolation methods, one day into the future. However, for longer-term prediction windows of seven or more days into the future, we find that our predictions are not as competitive and require future research.
 
 <!-- Datasets -->
 
@@ -59,7 +59,7 @@ If you are choosing to use comet, make sure to replace the API key in `config.ya
 python3 main_multicounty.py
 ```
 
-Then, run the appropriate file according to the [repository structure](#repository-structure).
+Then, run the appropriate file according to the [repository structure](#repository-structure). When running a file not in the main directory, make sure you change the path of the terminal to the folder the file is located in before running.
 
 <!-- Repository Structure -->
 
@@ -69,10 +69,10 @@ The log files contain the model structures and hyperparameters used for training
 
 | Path                                               | Description                                                                                                                                                                                          |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `arima_7day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 7 days of new case data using 21 days of past data.                                                                                      |
-| `arima_1day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 1 day of new case data using 13 days of past data.                                                                                       |
-| `constant_interpolation_7day.py `                  | Calculates the mean average percentage error between the case value for the next seven days based on the case values seven days prior.                                                               |
-| `constant_interpolation_1day.py`                   | Calculates the mean average percentage error between the case value for the next day based on the case values seven days prior.                                                                      |
+| `existing/arima_7day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 7 days of new case data using 21 days of past data.                                                                                      |
+| `existing/arima_1day.py`                                    | Trains and tests a baseline ARIMA model predicting the next 1 day of new case data using 13 days of past data.                                                                                       |
+| `existing/constant_interpolation_7day.py `                  | Calculates the mean average percentage error between the case value for the next seven days based on the case values seven days prior.                                                               |
+| `existing/constant_interpolation_1day.py`                   | Calculates the mean average percentage error between the case value for the next day based on the case values seven days prior.                                                                      |
 | `logs/nospatial-30counties-dim120.log`             | Log file for training a CPC model with no spatial data on 30 counties with an encoder/autoregressive dimension of 120.                                                                               |
 | `logs/spatial-30counties-dim120.log`               | Log file for training the Spatial CPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 120.                                                                        |
 | `logs/spatial-30counties-dim120-leakyrelu.log`     | Log file for training the Spatial CPC model with spatial data on 30 counties with an encoder/autoregressive dimension of 120 and a LeakyReLU in place of a ReLU in the previous two experiments.     |
@@ -86,8 +86,8 @@ The log files contain the model structures and hyperparameters used for training
 | `README.md`                                        | README file.                                                                                                                                                                                         |
 | `requirements.txt`                                 | Requirements for running this repository.                                                                                                                                                            |
 | `test_predict.py`                                  | Python script to generate predictions using Metropolis-Hastings.                                                                                                                                     |
-| `utils/dataset_nonoverlap.py`                      | Contains dataset classes for the nonoverlapping (Experiment 2) dataset in training Spatial CPC.                                                                                                      |
-| `utils/dataset_overlap_cpc.py`                     | Contains dataset classes for the overlapping (Experiment 1) dataset and mobility data in training Spatial CPC.                                                                                       |
+| `utils/dataset_nonoverlap.py`                      | Contains dataset classes for the nonoverlapping (Experiment 2) dataset and mobility data in training Spatial CPC.                                                                                                      |
+| `utils/dataset_overlap_scpc.py`                     | Contains dataset classes for the overlapping (Experiment 1) dataset and mobility data in training Spatial CPC.                                                                                       |
 | `utils/dataset_overlap_mh.py`                      | Contains dataset classes for the overlapping dataset and mobility data required for evaluating Metropolis-Hastings.                                                                                  |
 | `utils/logger.py`                                  | Contains helper functions for logging during training and validation.                                                                                                                                |
 | `utils/seed.py`                                    | Contains helper functions for setting the random seeds for all libraries.                                                                                                                            |
@@ -103,13 +103,13 @@ The log files contain the model structures and hyperparameters used for training
 
 ## Issues/Contact
 
-If you find any issues with this repository, please use the Issues tab or contact us using the emails provided in the paper.
+For any issues pertaining to the code, please use the Issues tab. For questions regarding the research paper, please email either of the first authors of this paper (Anish Susarla or Austin Liu; email addresses in the paper), and we will get back to you to address your questions.
 
 <!-- Acknowledgements -->
 
 ## Acknowledgements
 
-We would like to express our deepest gratitude to our research advisors Professor Andreas Züfle at Emory University and Dr. Hoang Duy Thai at George Mason University for their constant support, ideas, and feedback. Many thanks also to the [Aspiring Scientists Summer Internship Program](https://science.gmu.edu/assip) at George Mason University which provided us with the opportunity to conduct this research project this summer.
+We would like to express our deepest gratitude to our research advisors Professor Andreas Züfle at Emory University and Dr. Duy Hoang Thai at George Mason University for their constant support, ideas, and feedback. Many thanks also to the [Aspiring Scientists Summer Internship Program](https://science.gmu.edu/assip) at George Mason University which provided us with the opportunity to conduct this research project this summer.
 
 <!-- Funding -->
 
