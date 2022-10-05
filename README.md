@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="figs/SP-CPC_ModelFinalArchitecture.png" alt="Model Architecture">
+    <img src="figs/SP-CPC_WhiteFinalArch.png" alt="Model Architecture">
     <h1 align="center">
         Spatial Probabilistic Contrastive Predictive Coding
     </h1>
