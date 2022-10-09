@@ -26,14 +26,20 @@ Predictive Coding]()_, accepted to the 2022 Spatial Epidemiology workshop at the
 
 ## Citation
 
-If you found our paper or code useful, please cite:
-<TODO: Add BibTex Citation>
+If you found our paper or code useful, please cite our paper:
+
+ACM Reference Format:  Anish Susarla, Austin Liu, Duy Hoang Thai, Minh Tri Le, and Andreas Züfle.
+2022. Spatiotemporal Disease Case Prediction using Contrastive Predictive
+Coding. In The 3rd ACM SIGSPATIAL International Workshop on Spatial Computing for Epidemiology (SpatialEpi ’22) (SpatialEpi ’22), November 1, 2022, Seattle, WA, USA. ACM, New York, NY, USA, 9 pages. https://doi.org/10.1145/3557995.3566122
+
+Note: While our DOI link will not become active till sometime in November 2022, our paper will appear in the ACM Digital Library.
+
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-Time series prediction models have played a vital role in guiding effective policymaking and response during the COVID-19 pandemic by predicting future cases and deaths at the country, state, and county levels. However, for emerging diseases, there is not sufficient historic data to fit traditional supervised prediction models. In addition, such models do not consider human mobility between regions. To mitigate the need for supervised models and to include human mobility data in the prediction, we propose Spatial Probabilistic Contrastive Predictive Coding (SP-CPC) which leverages Contrastive Predictive Coding (CPC), an unsupervised time-series representation learning approach. We augment CPC to incorporate a covariate mobility matrix into the loss function, representing the relative number of individuals traveling between each county on a given day. The proposal distribution learned by the algorithm is then sampled by the Metropolis-Hastings algorithm to give a final prediction of the number of COVID-19 cases. We find that the model applied to COVID-19 data can make accurate short-term predictions, more accurate than ARIMA and simple time-series extrapolation methods, one day into the future. However, for longer-term prediction windows of seven or more days into the future, we find that our predictions are not as competitive and require future research.
+Time series prediction models have played a vital role in guiding effective policymaking and response during the COVID-19 pandemic by predicting future cases and deaths at the country, state, and county levels. However, for emerging diseases, there is not sufficient historic data to fit traditional supervised prediction models. In addition, such models do not consider human mobility between regions. To mitigate the need for supervised models and to include human mobility data in the prediction, we propose Spatial Probabilistic Contrastive Predictive Coding (SP-CPC) which leverages Contrastive Predictive Coding (CPC), an unsupervised time-series representation learning approach. We augment CPC to incorporate a covariate mobility matrix into the loss function, representing the relative number of individuals traveling between each county on a given day. The proposal distribution learned by the algorithm is then sampled by the Metropolis-Hastings algorithm to give a final prediction of the number of COVID-19 cases. We find that the model applied to COVID-19 data can make accurate short-term predictions, more accurate than ARIMA and simple time-series extrapolation methods, one day into the future. However, for longerterm prediction windows of seven or more days into the future, we find that our predictions are not as competitive and require future research.
 
 <!-- Datasets -->
 
