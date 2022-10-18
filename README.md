@@ -6,8 +6,8 @@
 </p>
 
 
-This repository contains the code to reproduce the results of our paper _[Spatiotemporal Disease Case Prediction Using Contrastive
-Predictive Coding](https://doi.org/10.1145/3557995.3566122)_, accepted to the 2022 Spatial Epidemiology workshop at the 30<sup>th</sup> ACM SIGSPATIAL conference in Seattle, WA from November 1-4, 2022.
+This repository contains the code to reproduce the results of our paper _[Spatiotemporal Disease Case Prediction using Contrastive
+Predictive Coding](https://dataoceanlab.github.io/spatial-epi-2022/files/paper_4.pdf)_, accepted to the 2022 Spatial Epidemiology workshop at the 30<sup>th</sup> ACM SIGSPATIAL conference in Seattle, WA from November 1-4, 2022.
 
 <!-- TABLE OF CONTENTS -->
 
@@ -18,7 +18,7 @@ Predictive Coding](https://doi.org/10.1145/3557995.3566122)_, accepted to the 20
 - [Datasets](#datasets)
 - [Getting Started](#getting-started)
 - [Repository Structure](#repository-structure)
-- [Contact](#contact)
+- [Contact](#issues-and-contact)
 - [Acknowledgements](#acknowledgements)
 - [References](#references)
 
@@ -30,9 +30,9 @@ If you found our paper or code useful, please cite our paper:
 
 ACM Reference Format:  Anish Susarla, Austin Liu, Duy Hoang Thai, Minh Tri Le, and Andreas Züfle.
 2022. Spatiotemporal Disease Case Prediction using Contrastive Predictive
-Coding. In The 3rd ACM SIGSPATIAL International Workshop on Spatial Computing for Epidemiology (SpatialEpi ’22) (SpatialEpi ’22), November 1, 2022, Seattle, WA, USA. ACM, New York, NY, USA, 9 pages. https://doi.org/10.1145/3557995.3566122
+Coding. In The 3rd ACM SIGSPATIAL International Workshop on Spatial Computing for Epidemiology (SpatialEpi ’22) (SpatialEpi ’22), November 1, 2022, Seattle, WA, USA. ACM, New York, NY, USA, 9 pages. https://<!---->doi.org/10.1145/3557995.3566122/
 
-Note: While our DOI link will not become active till sometime in November 2022, our paper will appear in the ACM Digital Library.
+Note: When the DOI is activated, the paper will appear in the ACM Digital Library. Until then, the paper can be accessed on the workshop website, hyperlinked above.
 
 
 <!-- ABOUT THE PROJECT -->
@@ -107,7 +107,7 @@ The log files contain the model structures and hyperparameters used for training
 
 <!-- Contact -->
 
-## Issues/Contact
+## Issues and Contact
 
 For any issues pertaining to the code, please use the Issues tab. For questions regarding the research paper, please email either of the first authors of this paper (Anish Susarla or Austin Liu; email addresses in the paper), and we will get back to you to address your questions.
 
