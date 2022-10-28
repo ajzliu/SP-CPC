@@ -30,10 +30,7 @@ If you found our paper or code useful, please cite our paper:
 
 ACM Reference Format:  Anish Susarla, Austin Liu, Duy Hoang Thai, Minh Tri Le, and Andreas Züfle.
 2022. Spatiotemporal Disease Case Prediction using Contrastive Predictive
-Coding. In The 3rd ACM SIGSPATIAL International Workshop on Spatial Computing for Epidemiology (SpatialEpi ’22) (SpatialEpi ’22), November 1, 2022, Seattle, WA, USA. ACM, New York, NY, USA, 9 pages. https://<!---->doi.org/10.1145/3557995.3566122/
-
-Note: When the DOI is activated, the paper will appear in the ACM Digital Library. Until then, the paper can be accessed on the workshop website, hyperlinked above.
-
+Coding. In The 3rd ACM SIGSPATIAL International Workshop on Spatial Computing for Epidemiology (SpatialEpi ’22) (SpatialEpi ’22), November 1, 2022, Seattle, WA, USA. ACM, New York, NY, USA, 9 pages. https://<!---->doi.org/10.1145/3557995.3566122
 
 <!-- ABOUT THE PROJECT -->
 
