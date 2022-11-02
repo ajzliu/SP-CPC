@@ -7,7 +7,7 @@
 
 
 This repository contains the code to reproduce the results of our paper _[Spatiotemporal Disease Case Prediction using Contrastive
-Predictive Coding](https://dataoceanlab.github.io/spatial-epi-2022/files/paper_4.pdf)_, accepted to the 2022 Spatial Epidemiology workshop at the 30<sup>th</sup> ACM SIGSPATIAL conference in Seattle, WA from November 1-4, 2022.
+Predictive Coding](https://dl.acm.org/doi/pdf/10.1145/3557995.3566122)_, accepted to the 2022 Spatial Epidemiology workshop at the 30<sup>th</sup> ACM SIGSPATIAL conference in Seattle, WA from November 1-4, 2022.
 
 <!-- TABLE OF CONTENTS -->
 
