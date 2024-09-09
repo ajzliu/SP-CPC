@@ -106,7 +106,7 @@ The log files contain the model structures and hyperparameters used for training
 
 ## Issues and Contact
 
-For any issues pertaining to the code, please use the Issues tab. For questions regarding the research paper, please email either of the first authors of this paper (Anish Susarla or Austin Liu; email addresses in the paper), and we will get back to you to address your questions.
+For any issues pertaining to the code, please use the Issues tab. For questions regarding the research paper, please email either of the first authors of this paper (<a href="mailto:anish.susarla@stern.nyu.edu" target="_blank">Anish Susarla</a> or <a href="mailto:a.liu@duke.edu" target="_blank">Austin Liu</a>), and we will get back to you to address your questions.
 
 <!-- Acknowledgements -->
 
